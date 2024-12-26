@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
+import react from '@vitejs/plugin-react-swc';
+
+
+// https://vitejs.dev/config/
+const config = defineConfig({
+  server: { host: '0.0.0.0' },
+  plugins: [
+    react(),
+  ],
 })
+
+export default config;
