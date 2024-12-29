@@ -5,8 +5,10 @@ import * as Yup from 'yup';
 import Inputs from '../../components/forms/input/Inputs';
 import Buttons from '../../components/button/Buttons';
 import { regiterUser } from '../../services/apiAuth';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+  const navigate = useNavigate();
   const initialValues = {
     username: '',
     email: '',
@@ -17,12 +19,13 @@ export default function Register() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().required('Username is required').min(3, 'Username must be at least 3 characters'),
     email: Yup.string().email('Invalid email format').required('Email is required'),
-    password: Yup.string().required('Password is required'),
-    //   .min(8, 'Password must be at least 8 characters')
-    //   .matches(/(?=.*[0-9])/, 'Password must contain a number')
-    //   .matches(/(?=.*[a-z])/, 'Password must contain a lowercase letter')
-    //   .matches(/(?=.*[A-Z])/, 'Password must contain an uppercase letter')
-    //   .matches(/(?=.*[!@#$%^&*])/, 'Password must contain a special character'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(8, 'Password must be at least 8 characters')
+      .matches(/(?=.*[0-9])/, 'Password must contain a number')
+      .matches(/(?=.*[a-z])/, 'Password must contain a lowercase letter')
+      .matches(/(?=.*[A-Z])/, 'Password must contain an uppercase letter')
+      .matches(/(?=.*[!@#$%^&*])/, 'Password must contain a special character'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
       .required('Confirm Password is required')
@@ -30,9 +33,9 @@ export default function Register() {
 
   const onSubmit = async (values, actions) => {
     try {
-      const res = await regiterUser(values);
+      await regiterUser(values);
       toast.success('Registration successful!');
-      console.log(res);
+      navigate('/login');
     } catch (error) {
       toast.error('Registration error. Please try again.');
     } finally {
@@ -42,7 +45,14 @@ export default function Register() {
 
   return (
     <div className={styles.loginWrapper}>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        validateOnBlur={false}
+        validateOnChange={false}
+        validateOnMount={false}
+      >
         {(formik) => (
           <Form className={styles.forms}>
             <div className={styles.formHeading}>

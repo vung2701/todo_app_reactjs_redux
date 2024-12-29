@@ -34,6 +34,9 @@ export default function Login() {
         initialValues={initialValues || {}}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
+        validateOnBlur={false}
+        validateOnChange={false}
+        validateOnMount={false}
       >
         {(formik) => {
           return (
@@ -57,7 +60,7 @@ export default function Login() {
                     value={formik.values.username}
                     onChange={formik.handleChange}
                     touched={formik.touched.username}
-                    errors={formik.errors.username && formik.touched.username && formik.errors.username}
+                    errors={formik.errors.username}
                   />
                   <Inputs
                     wrap
@@ -70,7 +73,7 @@ export default function Login() {
                     value={formik.values.password}
                     onChange={formik.handleChange}
                     touched={formik.touched.password}
-                    errors={formik.errors.password && formik.touched.password && formik.errors.password}
+                    errors={formik.errors.password}
                   />
                   <div className={styles.buttonBox}>
                     <Buttons texts="Login" types="submit" status="success" />

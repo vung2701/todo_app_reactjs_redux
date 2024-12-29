@@ -1,5 +1,5 @@
 import { Checkbox } from 'antd';
-import styles from './.module.css';
+import styles from './inputs.module.css';
 
 export default function Checkboxes(props) {
   const { labels, required, customerClass, options, name, handleChange, value, touched, errors, wrap = false } = props;
@@ -12,7 +12,7 @@ export default function Checkboxes(props) {
     <div className={`${styles.inputs} ${customerClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <Checkbox.Group
@@ -21,7 +21,7 @@ export default function Checkboxes(props) {
         options={options}
         value={value}
       />
-      {touched && errors && <div className={styles.red}>{errors}</div>}
+      {touched && errors && <div className={'red'}>{errors}</div>}
     </div>
   );
 }

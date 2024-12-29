@@ -35,7 +35,7 @@ export default function InputsMoney(props: any) {
     <div className={`${styles.inputs} ${customClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label htmlFor={name}>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div className={styles.inputWrapper}>
@@ -51,7 +51,7 @@ export default function InputsMoney(props: any) {
           disabled={disabled}
           className={styles.currencyInput}
         />
-        {errors && touched && <span className={styles.red}>{errors}</span>}
+        {errors && touched && <span className={'red'}>{errors}</span>}
       </div>
     </div>
   );

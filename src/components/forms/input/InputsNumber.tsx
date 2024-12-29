@@ -35,7 +35,7 @@ export default function InputsNumber(props: any) {
     <div className={`${styles.inputs} ${customClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label htmlFor={name}>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div className={styles.inputWrapper}>
@@ -52,7 +52,7 @@ export default function InputsNumber(props: any) {
           step={step}
           max={max}
         />
-        {errors && <span className={styles.red}>{errors}</span>}
+        {errors && <span className={'red'}>{errors}</span>}
       </div>
     </div>
   );

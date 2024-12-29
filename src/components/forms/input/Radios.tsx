@@ -21,7 +21,7 @@ export default function Radios(props: any) {
     <div className={`${styles.inputs} ${customClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label htmlFor={id}>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div>
@@ -39,7 +39,7 @@ export default function Radios(props: any) {
             </Radio>
           ))}
         </Radio.Group>
-        {touched && errors && <span className={styles.red}>{errors}</span>}
+        {touched && errors && <span className={'red'}>{errors}</span>}
       </div>
     </div>
   );

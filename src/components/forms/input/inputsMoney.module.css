@@ -5,13 +5,10 @@
   justify-content: start;
 }
 .inputs > label {
-  font-size: 15px;
   width: auto;
   min-width: 130px;
 }
-.red {
-  color: var(--color_red);
-}
+
 .inputs > div {
   width: 100%;
 }
@@ -30,6 +27,8 @@
 .inputs span {
   font-size: 14px;
   line-height: 18px;
+  display: inline-block;
+  margin-top: 4px;
 }
 
 .inputs.wrap {

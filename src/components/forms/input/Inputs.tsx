@@ -31,7 +31,7 @@ export default function Inputs(props) {
     <div className={`${styles.inputs} ${customClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label htmlFor={id}>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div className={styles.inputWrapper}>
@@ -53,7 +53,7 @@ export default function Inputs(props) {
           //     <EyeInvisibleOutlined onClick={togglePasswordVisibility} />
           //   ))}
         />
-        {errors && <span className={styles.red}>{errors}</span>}
+        {errors && <span className={'red'}>{errors}</span>}
       </div>
     </div>
   );

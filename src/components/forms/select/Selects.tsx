@@ -39,7 +39,7 @@ export default function Selects(props: any) {
     <div className={`${styles.selects} ${customerClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
         <label htmlFor={id}>
-          {labels}: {required && <span className={styles.red}>*</span>}
+          {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div className={styles.select}>
@@ -57,7 +57,7 @@ export default function Selects(props: any) {
           optionFilterProp="label"
           maxTagCount="responsive"
         />
-        {errors && <span className={styles.red}>{errors}</span>}
+        {errors && <span className={'red'}>{errors}</span>}
       </div>
     </div>
   );
