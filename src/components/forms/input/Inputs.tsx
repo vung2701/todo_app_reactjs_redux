@@ -45,15 +45,16 @@ export default function Inputs(props) {
           disabled={disabled}
           type={type === 'password' && showPassword ? 'text' : type} // Switch type based on showPassword state
           autoComplete="new-password" // Add autocomplete prop
-          // suffix={
-          //   type === 'password' &&
-          //   (showPassword ? (
-          //     <EyeOutlined onClick={togglePasswordVisibility} />
-          //   ) : (
-          //     <EyeInvisibleOutlined onClick={togglePasswordVisibility} />
-          //   ))}
+          suffix={
+            type === 'password' &&
+            (showPassword ? (
+              <EyeOutlined onClick={togglePasswordVisibility} />
+            ) : (
+              <EyeInvisibleOutlined onClick={togglePasswordVisibility} />
+            ))
+          }
         />
-        {errors && <span className={'red'}>{errors}</span>}
+        {errors && <span className={'error'}>{errors}</span>}
       </div>
     </div>
   );

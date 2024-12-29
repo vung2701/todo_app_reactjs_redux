@@ -52,7 +52,7 @@ export default function InputsNumber(props: any) {
           step={step}
           max={max}
         />
-        {errors && <span className={'red'}>{errors}</span>}
+        {errors && <span className={'error'}>{errors}</span>}
       </div>
     </div>
   );

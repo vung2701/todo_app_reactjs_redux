@@ -21,7 +21,7 @@ export default function Checkboxes(props) {
         options={options}
         value={value}
       />
-      {touched && errors && <div className={'red'}>{errors}</div>}
+      {touched && errors && <div className={'error'}>{errors}</div>}
     </div>
   );
 }

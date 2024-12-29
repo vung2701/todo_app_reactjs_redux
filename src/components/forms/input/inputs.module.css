@@ -19,11 +19,13 @@
   font-size: 14px;
   height: 38px;
 }
-.inputs span {
-  font-size: 14px;
-  line-height: 18px;
-  display: inline-block;
-  margin-top: 4px;
+
+.inputs > div > span {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
 }
 
 .inputs.wrap {

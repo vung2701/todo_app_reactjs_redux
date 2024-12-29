@@ -51,7 +51,7 @@ export default function InputsMoney(props: any) {
           disabled={disabled}
           className={styles.currencyInput}
         />
-        {errors && touched && <span className={'red'}>{errors}</span>}
+        {errors && touched && <span className={'error'}>{errors}</span>}
       </div>
     </div>
   );

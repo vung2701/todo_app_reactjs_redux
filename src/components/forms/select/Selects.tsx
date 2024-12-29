@@ -57,7 +57,7 @@ export default function Selects(props: any) {
           optionFilterProp="label"
           maxTagCount="responsive"
         />
-        {errors && <span className={'red'}>{errors}</span>}
+        {errors && <span className={'error'}>{errors}</span>}
       </div>
     </div>
   );

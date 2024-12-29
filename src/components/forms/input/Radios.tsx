@@ -39,7 +39,7 @@ export default function Radios(props: any) {
             </Radio>
           ))}
         </Radio.Group>
-        {touched && errors && <span className={'red'}>{errors}</span>}
+        {touched && errors && <span className={'error'}>{errors}</span>}
       </div>
     </div>
   );
