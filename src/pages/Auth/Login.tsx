@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 import { toast } from 'react-toastify';
-import styles from './login.module.css';
+import styles from './auth.module.css';
 import * as Yup from 'yup';
 
 export default function Login() {

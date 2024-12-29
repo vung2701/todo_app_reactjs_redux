@@ -6,8 +6,8 @@ export default function Menus() {
   return (
     <div className={`${styles.menus}`}>
       <ul>
-        <li className={`${styles.menuItem} ${location.pathname.includes('/employee') ? styles.active : ''}`}>
-          <Link to="/employee">Employee</Link>
+        <li className={`${styles.menuItem} ${location.pathname.includes('/task') ? styles.active : ''}`}>
+          <Link to="/task">Task</Link>
         </li>
       </ul>
     </div>

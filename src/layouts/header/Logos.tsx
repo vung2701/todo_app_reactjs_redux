@@ -5,7 +5,7 @@ const Logos = () => {
     <>
       <div>
         <Link className={styles.logo} to="/">
-          Todo App
+          Todo
         </Link>
       </div>
     </>
