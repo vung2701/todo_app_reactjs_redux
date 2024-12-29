@@ -5,10 +5,12 @@ import Login from '../pages/Auth/Login';
 import Unauthorized from '../pages/Unknown/Unauthorized';
 import NotFound from '../pages/Unknown/NotFound';
 import Task from '../pages/Task/Task';
+import Register from '../pages/Auth/Register';
 
 export default function AppRouter() {
   return (
     <Routes>
+      <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layouts />}>
         <Route path="/unauthorized" element={<Unauthorized />} />

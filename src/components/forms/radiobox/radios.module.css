@@ -2,14 +2,14 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: start;
 }
-.inputs > label {
+.inputs label {
   font-size: 15px;
   width: auto;
   min-width: 130px;
+  margin-bottom: 20px;
 }
-.red {
+.inputs > label > span {
   color: var(--color_red);
 }
 .inputs > div {
@@ -18,16 +18,10 @@
 .inputs input {
   color: var(--color_black1);
   font-weight: 400 !important;
-  padding: 7px 10px !important;
-  font-size: 14px;
-  height: 38px;
+  padding: 7px 10px;
 }
 .inputs span {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
-}
-
-.inputs.wrap {
-  flex-direction: column;
-  align-items: start;
+  color: var(--color_red);
 }

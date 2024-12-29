@@ -2,6 +2,8 @@ import { Form, Formik } from 'formik';
 import { toast } from 'react-toastify';
 import styles from './auth.module.css';
 import * as Yup from 'yup';
+import Inputs from '../../components/forms/input/Inputs';
+import Buttons from '../../components/button/Buttons';
 
 export default function Login() {
   const initialValues = {
@@ -44,7 +46,7 @@ export default function Login() {
                   <img src="/images/SignIn.png" alt="sign in" />
                 </div>
                 <div className={styles.formBox}>
-                  {/* <Inputs
+                  <Inputs
                     customClass={styles.loginInput}
                     wrap
                     labels="Username"
@@ -69,10 +71,9 @@ export default function Login() {
                     onChange={formik.handleChange}
                     touched={formik.touched.password}
                     errors={formik.errors.password && formik.touched.password && formik.errors.password}
-                  /> */}
+                  />
                   <div className={styles.buttonBox}>
-                    {/* <Buttons texts="Login" types="submit" status="success" />
-                    <OauthBtn /> */}
+                    <Buttons texts="Login" types="submit" status="success" />
                   </div>
                 </div>
               </div>

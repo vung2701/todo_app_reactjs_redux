@@ -21,7 +21,12 @@
   padding: 7px 10px !important;
   font-size: 14px;
   height: 38px;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #d9d9d9;
 }
+
 .inputs span {
   font-size: 14px;
   line-height: 18px;
@@ -30,4 +35,11 @@
 .inputs.wrap {
   flex-direction: column;
   align-items: start;
+}
+
+.inputs input:hover,
+.inputs input:focus {
+  border-color: #4096ff; /* Prevent green border on focus */
+  box-shadow: none; /* Remove the green focus shadow */
+  outline: none; /* Remove the focus outline */
 }
