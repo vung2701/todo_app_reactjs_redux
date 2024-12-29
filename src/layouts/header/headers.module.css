@@ -1,0 +1,51 @@
+.headers {
+  display: grid;
+  grid-template-columns: 90px auto 90px;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+.headers {
+  background: var(--color_green1);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  color: var(--color_white);
+}
+.logo img {
+  width: 70px;
+  object-fit: contain;
+}
+
+/* Menu */
+.menus ul {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menus {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.menus ul li {
+  cursor: pointer;
+  color: var(--color_white);
+}
+.menus ul li a {
+  color: var(--color_white);
+  font-size: 15px;
+}
+
+.menuItem.active a {
+  color: var(--color_orange);
+}
