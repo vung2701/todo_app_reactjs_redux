@@ -6,7 +6,7 @@
 }
 
 .forms {
-  width: 650px;
+  width: 640px;
   max-width: 100%;
   background: #fff;
   margin: auto;
@@ -32,7 +32,7 @@
 }
 
 .imgBox img {
-  width: 230px;
+  width: 220px;
   object-fit: contain;
 }
 

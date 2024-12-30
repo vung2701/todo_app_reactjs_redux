@@ -4,26 +4,36 @@ import styles from './auth.module.css';
 import * as Yup from 'yup';
 import Inputs from '../../components/forms/input/Inputs';
 import Buttons from '../../components/button/Buttons';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../services/apiAuth';
+import { login } from '../../redux/authSlice';
 
 export default function Login() {
+  const dispatch = useDispatch();
   const initialValues = {
-    username: '',
+    email: '',
     password: ''
   };
 
   const validationSchema = Yup.object().shape({
-    // Basic Information Validation
-    username: Yup.string().required('Username is required'),
+    email: Yup.string().required('Email is required').min(3, 'Email must be at least 3 characters'),
     password: Yup.string().required('Password is required')
+    // .min(8, 'Password must be at least 8 characters')
+    // .matches(/(?=.*[0-9])/, 'Password must contain a number')
+    // .matches(/(?=.*[a-z])/, 'Password must contain a lowercase letter')
+    // .matches(/(?=.*[A-Z])/, 'Password must contain an uppercase letter')
+    // .matches(/(?=.*[!@#$%^&*])/, 'Password must contain a special character')
   });
 
   const onSubmit = async (values, actions) => {
     try {
-      // const res = await userLogin(values);
-      // login(res?.data?.token, res?.data?.refresh_token, true);
+      const response = await loginUser(values);
+      console.log(response);
+      const { user } = response?.data;
+      localStorage.setItem('accessToken', response.data.accessToken); // Store token locally if needed
+      dispatch(login(user));
     } catch (error) {
-      toast.error('Login error');
-    } finally {
+      console.error('Login failed', error);
     }
   };
 
@@ -52,15 +62,15 @@ export default function Login() {
                   <Inputs
                     customClass={styles.loginInput}
                     wrap
-                    labels="Username"
+                    labels="Email"
                     required={true}
                     type="text"
-                    name="username"
-                    placeholder={'Username'}
-                    value={formik.values.username}
+                    name="email"
+                    placeholder={'Email'}
+                    value={formik.values.email}
                     onChange={formik.handleChange}
-                    touched={formik.touched.username}
-                    errors={formik.errors.username}
+                    touched={formik.touched.email}
+                    errors={formik.errors.email}
                   />
                   <Inputs
                     wrap

@@ -40,14 +40,20 @@
   margin: 0;
   padding: 0;
 }
-.menus ul li {
+ul li {
   cursor: pointer;
   color: var(--color_white);
 }
-.menus ul li a {
+ul li a {
   color: var(--color_white);
 }
 
 .menuItem.active a {
   color: var(--color_orange);
+}
+
+/* Right Menu */
+.rightMenu {
+  justify-self: flex-end;
+  color: var(--color_white);
 }
