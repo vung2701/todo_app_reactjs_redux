@@ -4,7 +4,7 @@ import Layouts from '../layouts/Layouts';
 import Login from '../pages/Auth/Login';
 import Unauthorized from '../pages/Unknown/Unauthorized';
 import NotFound from '../pages/Unknown/NotFound';
-import Task from '../pages/Task/Task';
+import Tasks from '../pages/Task/Tasks';
 import Register from '../pages/Auth/Register';
 
 export default function AppRouter() {
@@ -17,7 +17,7 @@ export default function AppRouter() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/" element={<Home />} />
-        <Route path="/task" element={<Task />} />
+        <Route path="/task" element={<Tasks />} />
       </Route>
     </Routes>
   );

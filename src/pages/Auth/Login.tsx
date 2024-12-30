@@ -1,5 +1,4 @@
 import { Form, Formik } from 'formik';
-import { toast } from 'react-toastify';
 import styles from './auth.module.css';
 import * as Yup from 'yup';
 import Inputs from '../../components/forms/input/Inputs';
@@ -7,8 +6,10 @@ import Buttons from '../../components/button/Buttons';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../services/apiAuth';
 import { login } from '../../redux/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const initialValues = {
     email: '',
@@ -28,10 +29,10 @@ export default function Login() {
   const onSubmit = async (values, actions) => {
     try {
       const response = await loginUser(values);
-      console.log(response);
-      const { user } = response?.data;
-      localStorage.setItem('accessToken', response.data.accessToken); // Store token locally if needed
+      const { user } = response?.user;
+      localStorage.setItem('accessToken', response.accessToken); // Store token locally if needed
       dispatch(login(user));
+      navigate('/');
     } catch (error) {
       console.error('Login failed', error);
     }
