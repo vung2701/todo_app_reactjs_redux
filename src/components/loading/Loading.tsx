@@ -1,16 +1,11 @@
-import styles from './loading.module.css';
+import './loading.module.css'; // Thêm CSS tùy chỉnh nếu cần
 
-export default function Loading(props: any) {
-  const { isOverlay = true, size, isLight } = props;
-
+const Loading = () => {
   return (
-    <div
-      className={`${isOverlay ? styles.overlay : ''} 
-       ${isLight ? styles.light : ''} ${size == 'small' ? styles.small : ''}`}
-    >
-      <div>
-        <div className={styles.loader}></div>
-      </div>
+    <div className="">
+      <div className="loading-spinner"></div>
     </div>
   );
-}
+};
+
+export default Loading;

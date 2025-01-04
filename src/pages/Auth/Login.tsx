@@ -57,7 +57,7 @@ export default function Login() {
               </div>
               <div className={styles.contentBox}>
                 <div className={styles.imgBox}>
-                  <img src="/images/SignIn.png" alt="sign in" />
+                  <img src="/images/SignIn.png" alt="sign in" loading="lazy" />
                 </div>
                 <div className={styles.formBox}>
                   <Inputs
@@ -87,6 +87,13 @@ export default function Login() {
                     errors={formik.errors.password}
                   />
                   <div className={styles.buttonBox}>
+                    <Buttons
+                      texts="Register"
+                      status="primary"
+                      handleClick={() => {
+                        navigate('/register');
+                      }}
+                    />
                     <Buttons texts="Login" types="submit" status="success" />
                   </div>
                 </div>

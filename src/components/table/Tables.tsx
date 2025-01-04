@@ -75,7 +75,7 @@ export default function Tables(props: any) {
         noHeader
         onSort={onSort}
         sortServer
-        customStyles={customStyles}
+        customStyles={estilos}
       />
       {total > per_page && (
         <div className={styles.pagination}>

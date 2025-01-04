@@ -8,7 +8,7 @@ export default function Layouts() {
   return (
     <Layout>
       <Headers />
-      <Content style={{ padding: '0 50px 30px 50px', background: '#fff', minHeight: 'calc(100vh - 30px)' }}>
+      <Content style={{ padding: '0 50px 30px 50px', background: '#fff', minHeight: 'calc(100vh - 42px)' }}>
         <Outlet />
       </Content>
       <Footers />

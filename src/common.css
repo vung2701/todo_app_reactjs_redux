@@ -8,3 +8,24 @@
   display: inline-block;
   margin-top: 4px;
 }
+
+/* table */
+.table-icon-box {
+  display: flex;
+  gap: 6px;
+}
+
+.table-icon {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--color_blue);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-icon:hover {
+  opacity: 0.8;
+}

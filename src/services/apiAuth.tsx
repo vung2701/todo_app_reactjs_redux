@@ -20,7 +20,7 @@ const loginUser = async (values: any) => {
 };
 const logoutUser = async () => {
   try {
-    const res = await axiosInstance.post('user/logout');
+    const res = await axiosInstance.post('user/logout', {}, { withCredentials: true });
     return res.data;
   } catch (error) {
     console.log(error);
@@ -29,7 +29,7 @@ const logoutUser = async () => {
 
 const refreshToken = async () => {
   try {
-    const res = await axiosInstance.post('user/refresh_token');
+    const res = await axiosInstance.post('user/refresh_token', {}, { withCredentials: true });
     return res.data;
   } catch (error) {
     console.log(error);

@@ -59,7 +59,7 @@ export default function Register() {
             </div>
             <div className={styles.contentBox}>
               <div className={styles.imgBox}>
-                <img src="/images/SignIn.png" alt="sign in" />
+                <img src="/images/SignIn.png" alt="sign in" loading="lazy" />
               </div>
               <div className={styles.formBox}>
                 <Inputs
@@ -115,6 +115,13 @@ export default function Register() {
                   errors={formik.errors.confirmPassword}
                 />
                 <div className={styles.buttonBox}>
+                  <Buttons
+                    texts="Login"
+                    status="primary"
+                    handleClick={() => {
+                      navigate('/login');
+                    }}
+                  />
                   <Buttons
                     texts="Register"
                     types="submit"
