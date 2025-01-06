@@ -13,6 +13,12 @@ const regiterUser = async (values: any) => {
 const loginUser = async (values: any) => {
   try {
     const res = await axiosInstance.post('user/login', values);
+    if (res.data.refreshToken) {
+      console.log(res.data.refreshToken);
+      console.log('Cookie before:', document.cookie);
+      document.cookie = `refreshToken=${res.data.refreshToken}; path=/; max-age=604800`; // 7 ngày
+      console.log('Cookie saved:', document.cookie);
+    }
     return res.data;
   } catch (error) {
     console.log(error);

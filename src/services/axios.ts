@@ -24,7 +24,7 @@ const _createAxios = (url: string, token?: string | null, headers?: Record<strin
     (error) => Promise.reject(error)
   );
 
-    instance.interceptors.response.use(
+  instance.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401 && error.config && !error.config._retry) {

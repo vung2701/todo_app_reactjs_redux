@@ -87,6 +87,7 @@ export default function Login() {
                     errors={formik.errors.password}
                   />
                   <div className={styles.buttonBox}>
+                    <Buttons texts="Login" types="submit" status="success" />
                     <Buttons
                       texts="Register"
                       status="primary"
@@ -94,7 +95,6 @@ export default function Login() {
                         navigate('/register');
                       }}
                     />
-                    <Buttons texts="Login" types="submit" status="success" />
                   </div>
                 </div>
               </div>

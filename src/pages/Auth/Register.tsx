@@ -116,17 +116,17 @@ export default function Register() {
                 />
                 <div className={styles.buttonBox}>
                   <Buttons
+                    texts="Register"
+                    types="submit"
+                    status={formik.isSubmitting ? 'loading' : 'success'}
+                    disabled={formik.isSubmitting}
+                  />
+                  <Buttons
                     texts="Login"
                     status="primary"
                     handleClick={() => {
                       navigate('/login');
                     }}
-                  />
-                  <Buttons
-                    texts="Register"
-                    types="submit"
-                    status={formik.isSubmitting ? 'loading' : 'success'}
-                    disabled={formik.isSubmitting}
                   />
                 </div>
               </div>
