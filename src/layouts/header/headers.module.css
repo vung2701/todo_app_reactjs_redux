@@ -10,7 +10,7 @@
   z-index: 100;
 }
 .headers {
-  background: linear-gradient(to bottom, var(--color_blue1), var(--color_blue2));
+  background: linear-gradient(to bottom, var(--color_blue), var(--color_blue2));
 }
 
 /* Logo */

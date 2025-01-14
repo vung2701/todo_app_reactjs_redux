@@ -9,6 +9,11 @@
   margin-top: 4px;
 }
 
+/* page */
+.page_container {
+  padding: 70px 90px 0 90px;
+}
+
 /* table */
 .table-icon-box {
   display: flex;
@@ -28,4 +33,11 @@
 
 .table-icon:hover {
   opacity: 0.8;
+}
+
+.edit-icon {
+  color: var(--color_blue);
+}
+.delete-icon {
+  color: var(--color_red);
 }
