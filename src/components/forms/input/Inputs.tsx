@@ -7,7 +7,6 @@ export default function Inputs(props) {
   const {
     errors,
     value,
-    id,
     name,
     onChange,
     touched,
@@ -30,13 +29,12 @@ export default function Inputs(props) {
   return (
     <div className={`${styles.inputs} ${customClass} ${wrap ? styles.wrap : ''}`}>
       {labels && (
-        <label htmlFor={id}>
+        <label>
           {labels}: {required && <span className={'red'}>*</span>}
         </label>
       )}
       <div className={styles.inputWrapper}>
         <Input
-          id={id}
           onChange={onChange}
           status={touched && errors ? 'error' : ''}
           value={value}
