@@ -72,6 +72,7 @@ export default function Tasks() {
   ];
   return (
     <div className={`${styles.tasks} page_container`}>
+      <Tiles texts="Tasks" fontSize={23} fontWeight={700} />
       <div className="table-function">
         <Buttons
           texts="Create"

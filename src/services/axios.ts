@@ -38,12 +38,18 @@ const _createAxios = (url: string, token?: string | null, headers?: Record<strin
 
       // Handle 401 errors by refreshing the token
       if (error.response?.status === 401 && !originalRequest._retry) {
-        console.log( originalRequest._retry)
+        if (!originalRequest._retry) {
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+          window.location.href = '/login';
+        }
         originalRequest._retry = true;
-        console.log( originalRequest._retry)
+
         try {
           await new Promise((resolve) => setTimeout(resolve, 10000)); // Delay 10 seconds
           const res = await refreshToken();
+          originalRequest._retry = false;
+
           if (res?.accessToken) {
             localStorage.setItem('accessToken', res.accessToken);
             instance.defaults.headers.Authorization = `Bearer ${res.accessToken}`;

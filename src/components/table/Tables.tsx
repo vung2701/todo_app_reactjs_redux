@@ -5,7 +5,7 @@ import styles from './tables.module.css';
 const estilos = {
   headCells: {
     style: {
-      backgroundColor: '#0a5eb0 ',
+      backgroundColor: '#278a7c',
       fontWeight: 'bold',
       fontSize: 14,
       color: '#fff',

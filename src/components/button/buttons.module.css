@@ -16,7 +16,7 @@
 .button.success:hover,
 .button.success {
   color: var(--color_white) !important;
-  background-color: var(--color_green1) !important;
+  background-color: var(--color_green3) !important;
 }
 
 .button.primary:hover,
