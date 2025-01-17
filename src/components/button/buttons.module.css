@@ -34,7 +34,7 @@
 .button.cancel:hover,
 .button.cancel {
   color: var(--color_white) !important;
-  background-color: var(--color_gray) !important;
+  background-color: var(--color_black3) !important;
 }
 
 .button:hover {

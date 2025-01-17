@@ -6,6 +6,7 @@ import Unauthorized from '../pages/Unknown/Unauthorized';
 import NotFound from '../pages/Unknown/NotFound';
 import Tasks from '../pages/Task/Tasks';
 import Register from '../pages/Auth/Register';
+import AddTask from '../pages/Task/events/AddTask';
 
 export default function AppRouter() {
   return (
@@ -18,6 +19,7 @@ export default function AppRouter() {
 
         <Route path="/" element={<Home />} />
         <Route path="/task" element={<Tasks />} />
+        <Route path="/task/create" element={<AddTask />} />
       </Route>
     </Routes>
   );

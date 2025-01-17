@@ -5,29 +5,22 @@ import styles from './eventsTask.module.css';
 import FormTask from './FormTask';
 import Buttons from '../../../components/button/Buttons';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { TODAY } from '../../../types/constant';
+import { TaskStatus } from '../../../types/DataSelect';
 
 export default function AddTask() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const initialValues = {
-    title: ''
+    title: '',
+    startDate: TODAY,
+    endDate: TODAY,
+    status: TaskStatus[0].value
   };
 
   const validationSchema = Yup.object().shape({
-    // Basic Information Validation
-    name: Yup.string().required('Name is required'),
-    phone: Yup.string().required('Phone is required'),
-    personal_email: Yup.string().email('Invalid email').required('Personal Email is required'),
-    work_email: Yup.string().email('Invalid email').required('Work Email is required'),
-
-    // Job Information Validation
-    department: Yup.string().required('Department is required'),
-    position: Yup.string().required('Position is required'),
-
-    // Bank Information Validation
-    bank_name: Yup.string().required('Bank name is required'),
-    bank_number: Yup.string().required('Bank number is required'),
-    bank_branch: Yup.string().required('Bank branch is required'),
-    holder_name: Yup.string().required('Bank holder name is required')
+    title: Yup.string().required('This field is required')
   });
 
   const onSubmit = async (values, actions) => {

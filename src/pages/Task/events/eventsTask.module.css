@@ -12,6 +12,10 @@
 .information {
   margin-bottom: 50px;
 }
+
+.information:first-child {
+  margin-top: 50px;
+}
 .titles {
   position: absolute;
   top: -15px;

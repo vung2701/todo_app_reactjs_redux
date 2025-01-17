@@ -29,6 +29,7 @@
 .select {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .selects.wrap .select {

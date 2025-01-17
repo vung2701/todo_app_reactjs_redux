@@ -45,3 +45,10 @@
 .delete-icon {
   color: var(--color_red);
 }
+
+.buttonBox {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  padding: 15px 20px;
+}
