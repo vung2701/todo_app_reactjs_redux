@@ -9,12 +9,11 @@ import { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons';
 import { formatDate } from '../../utils/format';
 
 export default function Tasks() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState();
   const navigate = useNavigate();
 
   const fetchTasks = async () => {
     const response = await getTasks();
-    console.log(response);
     setTasks(response);
   };
 
@@ -86,8 +85,8 @@ export default function Tasks() {
       </div>
       <Tables
         columns={columns}
-        datas={tasks}
-        // currentPage={currentPage}
+        datas={tasks?.items}
+        currentPage={tasks?.current_page}
         // setCurrentPage={handlePageChange}
         // perPage={perPage}
         // onSort={handleSort}

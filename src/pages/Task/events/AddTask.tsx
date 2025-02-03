@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { TODAY } from '../../../types/constant';
 import { TaskStatus } from '../../../types/DataSelect';
+import { createTask } from '../../../services/apiTask';
+import { loading, unLoading } from '../../../redux/loadingSlice';
+import { toast } from 'react-toastify';
 
 export default function AddTask() {
   const navigate = useNavigate();
@@ -24,9 +27,15 @@ export default function AddTask() {
   });
 
   const onSubmit = async (values, actions) => {
+    dispatch(loading());
     try {
+      await createTask(values);
+      toast.success('Task added successfully');
+      navigate('/task');
     } catch (error) {
+      console.log(error);
     } finally {
+      dispatch(unLoading());
     }
   };
   return (
