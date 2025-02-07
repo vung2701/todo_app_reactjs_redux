@@ -70,7 +70,7 @@ export default function Tasks() {
       cell: (row) => {
         return (
           <div className="table-icon-box">
-            <Link to={`/task/update/${row?.id}`} className="table-icon edit-icon">
+            <Link to={`/task/update/${row?._id}`} className="table-icon edit-icon">
               <EditOutlined />
             </Link>
             <button className="table-icon delete-icon" onClick={() => {}}>
