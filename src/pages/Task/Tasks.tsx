@@ -7,19 +7,31 @@ import { getTasks } from '../../services/apiTask';
 import Buttons from '../../components/button/Buttons';
 import { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons';
 import { formatDate } from '../../utils/format';
+import { TaskStatus } from '../../types/DataSelect';
 
 export default function Tasks() {
   const [tasks, setTasks] = useState();
+  const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0);
+  const perPage = 5;
   const navigate = useNavigate();
 
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+
   const fetchTasks = async () => {
-    const response = await getTasks();
-    setTasks(response);
+    const response = await getTasks({
+      perPage,
+      page
+    });
+    setTasks(response.items);
+    setTotal(response.totalItems);
   };
 
   useEffect(() => {
     fetchTasks();
-  }, []);
+  }, [page]);
 
   const columns = [
     {
@@ -49,7 +61,7 @@ export default function Tasks() {
     {
       name: 'Status',
       selector: (row) => {
-        return row?.status;
+        return TaskStatus.find((status) => status.value === row.status)?.label;
       }
     },
     {
@@ -85,10 +97,11 @@ export default function Tasks() {
       </div>
       <Tables
         columns={columns}
-        datas={tasks?.items}
-        currentPage={tasks?.current_page}
-        // setCurrentPage={handlePageChange}
-        // perPage={perPage}
+        datas={tasks}
+        currentPage={page}
+        setCurrentPage={handlePageChange}
+        perPage={perPage}
+        total={total}
         // onSort={handleSort}
       />
     </div>

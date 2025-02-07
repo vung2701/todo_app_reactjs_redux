@@ -50,7 +50,7 @@ export default function Tables(props: any) {
     currentPage,
     onSort,
     total,
-    per_page
+    perPage
   } = props;
 
   const handleSelectedRowsChange = (selectedRows) => {
@@ -77,10 +77,10 @@ export default function Tables(props: any) {
         sortServer
         customStyles={estilos}
       />
-      {total > per_page && (
+      {total > perPage && (
         <div className={styles.pagination}>
           <Paginations
-            pageSize={per_page}
+            pageSize={perPage}
             totals={total ?? ''}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

@@ -2,9 +2,11 @@ import { createAxios } from './axios';
 
 const axiosInstance = createAxios();
 
-const getTasks = async () => {
+const getTasks = async (params: any) => {
+  let per_page = params?.perPage || 5;
+  let page = params?.page || 1;
   try {
-    const res = await axiosInstance.get('todo');
+    const res = await axiosInstance.get(`todo?page=${page}&per_page=${per_page}&sort=-_id`);
     return res.data;
   } catch (error) {
     console.log(error);
